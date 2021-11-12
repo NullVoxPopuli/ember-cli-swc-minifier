@@ -1,0 +1,73 @@
+{
+  "name": "ember-cli-swc-minifier",
+  "version": "5.1.0",
+  "description": "JavaScript minification for Ember-CLI",
+  "keywords": [
+    "ember-addon"
+  ],
+  "homepage": "https://github.com/nullvoxpopuli/ember-cli-swc-minifier#readme",
+  "bugs": {
+    "url": "https://github.com/nullvoxpopuli/ember-cli-swc-minifier/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nullvoxpopuli/ember-cli-swc-minifier.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix",
+    "build": "ember build",
+    "start": "ember server",
+    "test": "ember test -e production"
+  },
+  "dependencies": {
+    "async-promise-queue": "^1.0.5",
+    "broccoli-plugin": "^4.0.7",
+    "debug": "^4.3.2",
+    "esbuild": "^0.13.13",
+    "lodash.defaultsdeep": "^4.6.1",
+    "symlink-or-copy": "^1.3.1",
+    "walk-sync": "^3.0.0",
+    "workerpool": "^6.1.5"
+  },
+  "devDependencies": {
+    "@nullvoxpopuli/eslint-configs": "^2.1.3",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "semantic-release": "^17.4.7"
+  },
+  "engines": {
+    "node": ">= 12"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "before": "ember-cli-sri",
+    "after": "broccoli-asset-rev"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ]
+  },
+  "volta": {
+    "node": "16.13.0",
+    "yarn": "1.22.17",
+    "npm": "8.1.3"
+  }
+}
