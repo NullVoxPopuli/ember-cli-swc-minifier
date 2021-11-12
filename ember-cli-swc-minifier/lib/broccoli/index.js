@@ -23,7 +23,7 @@ const MatchNothing = {
   },
 };
 
-module.exports = class ESBuildWriter extends Plugin {
+module.exports = class SWCWriter extends Plugin {
   constructor(_inputNodes, options = {}) {
     let inputNodes = Array.isArray(_inputNodes) ? _inputNodes : [_inputNodes];
 

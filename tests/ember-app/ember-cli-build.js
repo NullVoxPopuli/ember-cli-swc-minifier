@@ -2,15 +2,17 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-const { SOURCEMAP } = process.env;
+const { SOURCEMAP, SOURCEMAP_INLINE } = process.env;
 
 module.exports = function (defaults) {
   let options = {
     'ember-cli-swc-minifier': {},
   };
 
-  if (SOURCEMAP) {
-    options['ember-cli-swc-minifier'].sourceMap = SOURCEMAP;
+  options['ember-cli-swc-minifier'].sourceMap = SOURCEMAP ? true : false;
+
+  if (SOURCEMAP_INLINE) {
+    options['ember-cli-swc-minifier'].inlineSourcesContent = true;
   }
 
   let app = new EmberApp(defaults, {
