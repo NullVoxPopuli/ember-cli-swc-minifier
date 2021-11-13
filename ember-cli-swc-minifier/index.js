@@ -16,14 +16,14 @@ module.exports = {
 
     let addonOptions = app.options['ember-cli-swc-minifier'];
 
-    this._esbuildOptions = Object.assign({}, defaultOptions, addonOptions);
+    this._swcOptions = Object.assign({}, defaultOptions, addonOptions);
   },
 
   postprocessTree(type, tree) {
-    if (this._esbuildOptions.enabled === true && type === 'all') {
-      const ESBuildPlugin = require('./lib/broccoli');
+    if (this._swcOptions.enabled === true && type === 'all') {
+      const SWCPlugin = require('./lib/broccoli');
 
-      return new ESBuildPlugin(tree, this._esbuildOptions);
+      return new SWCPlugin(tree, this._swcOptions);
     } else {
       return tree;
     }
