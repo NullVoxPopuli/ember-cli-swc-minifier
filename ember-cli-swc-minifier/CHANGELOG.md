@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/compare/v1.1.0...v1.1.1) (2021-11-13)
+
+
+### Bug Fixes
+
+* **swc, config:** reduce speed regression ([4a39bbc](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/commit/4a39bbc9e101f7b1a421ea6b631c9078f99973f7))
+
 # [1.1.0](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/compare/v1.0.0...v1.1.0) (2021-11-13)
 
 
