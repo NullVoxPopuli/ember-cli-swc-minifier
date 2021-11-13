@@ -18,7 +18,6 @@ const DEFAULT_OPTIONS = {
   // Rust implementation and defaults here: https://github.com/swc-project/swc/blob/2b2f6955f22c7ef04dd844e7aa686bbcefd977db/crates/swc_ecma_minifier/src/option/mod.rs#L96
   compress: {
     sequences: false,
-    reduce_funcs: true,
   },
   mangle: true,
   // list of versions: https://github.com/swc-project/swc/blob/2b2f6955f22c7ef04dd844e7aa686bbcefd977db/crates/swc_ecma_minifier/src/option/terser.rs#L456
