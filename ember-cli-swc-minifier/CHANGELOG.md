@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/compare/v1.1.2...v1.1.3) (2021-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @swc/core to ^1.2.110 ([c61b998](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/commit/c61b9981f5aec1ecd981344414da0a906fde3658))
+
 ## [1.1.2](https://github.com/nullvoxpopuli/ember-cli-swc-minifier/compare/v1.1.1...v1.1.2) (2021-11-17)
 
 
