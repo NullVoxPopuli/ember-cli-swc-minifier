@@ -23,7 +23,7 @@
     "test": "ember test -e production"
   },
   "dependencies": {
-    "@swc/core": "^1.2.110",
+    "@swc/core": "^1.2.111",
     "async-promise-queue": "^1.0.5",
     "broccoli-plugin": "^4.0.7",
     "debug": "^4.3.2",
