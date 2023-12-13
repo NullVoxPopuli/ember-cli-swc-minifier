@@ -36,7 +36,7 @@
     "@nullvoxpopuli/eslint-configs": "^2.3.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^18.0.1"
+    "semantic-release": "^22.0.12"
   },
   "engines": {
     "node": ">= 12"
