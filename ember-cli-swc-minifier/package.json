@@ -64,10 +64,5 @@
       "@semantic-release/github",
       "@semantic-release/git"
     ]
-  },
-  "volta": {
-    "node": "16.19.1",
-    "yarn": "1.22.19",
-    "npm": "8.19.4"
   }
 }
