@@ -1,14 +1,12 @@
 'use strict';
 
+import { beforeEach, expect, jest, test } from '@jest/globals';
+import del from 'del';
 import execa from 'execa';
-
 // fs/promises is not available in node 12
 // import fs from 'fs/promises';
 import { default as fsWithCallbacks } from 'fs';
-import del from 'del';
 import { globby, globbySync } from 'globby';
-
-import { jest, expect, beforeEach, test } from '@jest/globals';
 
 const fs = fsWithCallbacks.promises;
 
@@ -43,6 +41,7 @@ async function hasSourceMappingURL(glob, expectation) {
       if (expectation) {
         console.error(`${file} did not have content matching ${key}`);
       }
+
       return false;
     }
   }
