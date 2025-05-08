@@ -16,7 +16,7 @@ Installation
 1. remove `ember-cli-terser` or `ember-cli-ugfily`
 2.
     ```
-    yarn add --dev @nullvoxpopuli/ember-cli-swc-minifier
+    pnpm add --dev @nullvoxpopuli/ember-cli-swc-minifier
     # or
     npm install --save-dev @nullvoxpopuli/ember-cli-swc-minifier
     ```

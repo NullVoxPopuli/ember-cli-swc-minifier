@@ -36,10 +36,11 @@
     "@nullvoxpopuli/eslint-configs": "^2.3.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "eslint": "^7.32.0",
     "semantic-release": "^18.0.1"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 18"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -64,10 +65,5 @@
       "@semantic-release/github",
       "@semantic-release/git"
     ]
-  },
-  "volta": {
-    "node": "16.19.1",
-    "yarn": "1.22.19",
-    "npm": "8.19.4"
   }
 }
