@@ -1,3 +1,3 @@
 #!/bin/bash
 
-NODE_OPTIONS="--experimental-vm-modules --trace-warnings" yarn jest --config ./jest.config.js
+NODE_OPTIONS="--experimental-vm-modules --trace-warnings" pnpm jest --config ./jest.config.js
