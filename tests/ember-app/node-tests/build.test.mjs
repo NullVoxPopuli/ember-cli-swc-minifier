@@ -1,16 +1,10 @@
 'use strict';
 
-import { beforeEach, expect, jest, test } from '@jest/globals';
 import del from 'del';
-import execa from 'execa';
-// fs/promises is not available in node 12
-// import fs from 'fs/promises';
-import { default as fsWithCallbacks } from 'fs';
+import { execa } from 'execa';
+import fs from 'fs/promises';
 import { globby, globbySync } from 'globby';
-
-const fs = fsWithCallbacks.promises;
-
-jest.setTimeout(60_000);
+import { beforeEach, expect, test } from 'vitest';
 
 beforeEach(async () => {
   await del(['./dist']);
@@ -58,4 +52,4 @@ test('basic build', async () => {
 
   expect(exists('dist/**/*.map')).toBeFalsy();
   expect(await hasJSSourceMapsURL(false)).toBeFalsy();
-});
+}, 60_000);
