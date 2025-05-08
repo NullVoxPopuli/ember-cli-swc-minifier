@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/nullvoxpopuli/ember-cli-swc-minifier/issues"
   },
-  "repository": "https://github.com/nullvoxpopuli/ember-cli-swc-minifier"
+  "repository": "https://github.com/nullvoxpopuli/ember-cli-swc-minifier",
   "license": "MIT",
   "author": "",
   "scripts": {
