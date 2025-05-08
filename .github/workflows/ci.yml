@@ -9,12 +9,20 @@ on:
   schedule:
     - cron: "0 3 * * 0" # every Sunday at 3am
 
-
 jobs:
+  lint:
+    name: Source
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm lint
+        working-directory: "ember-cli-swc-minifier"
+
   build:
     name: "Ember App: ${{matrix.os }} - Node ${{ matrix.node }}"
     runs-on: "${{ matrix.os }}-latest"
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
 
     strategy:
       matrix:
@@ -22,38 +30,7 @@ jobs:
         os: [windows, ubuntu]
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: volta-cli/action@v1
-      with:
-        node-version: ${{ matrix.node }}
-    - uses: actions/cache@v3
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+    - uses: actions/checkout@v4
+    - uses: wyvox/action-setup-pnpm@v3
+    - run: pnpm test:ember-app
 
-    - run: yarn install --frozen-lockfile
-    - run: yarn test:ember-app
-
-  publish:
-    name: "Release"
-    runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'"
-    needs: [build]
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-      - uses: volta-cli/action@v1
-      - uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install
-
-      - name: Release
-        run: yarn semantic-release
-        working-directory: 'ember-cli-swc-minifier'
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
