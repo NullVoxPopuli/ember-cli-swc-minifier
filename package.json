@@ -4,6 +4,7 @@
   "author": "NullVoxPopuli",
   "scripts": {
     "test": "pnpm test:ember-app",
+    "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
