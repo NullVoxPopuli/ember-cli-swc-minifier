@@ -35,10 +35,7 @@
   },
   "devDependencies": {
     "@nullvoxpopuli/eslint-configs": "^5.1.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "eslint": "^9.26.0",
-    "semantic-release": "^18.0.1"
+    "eslint": "^9.26.0"
   },
   "engines": {
     "node": ">= 18"
@@ -52,19 +49,5 @@
   "ember-addon": {
     "before": "ember-cli-sri",
     "after": "broccoli-asset-rev"
-  },
-  "release": {
-    "branches": [
-      "main",
-      "master"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ]
   }
 }
