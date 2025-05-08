@@ -14,5 +14,5 @@
       "pkgJSONPath": "./ember-cli-swc-minifier/package.json"
     }
   },
-  "description": "## Release (2025-05-08)\n\n* ember-cli-swc-minifier 2.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-cli-swc-minifier`\n  * [#55](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/55) Bump minimum bundled SWC ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-05-08)\n\n* ember-cli-swc-minifier 2.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-cli-swc-minifier`\n  * [#55](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/55) Bump minimum bundled SWC ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli) \n"
 }
