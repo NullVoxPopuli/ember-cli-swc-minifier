@@ -2,10 +2,6 @@
   "name": "ember-cli-swc-minifier",
   "private": true,
   "author": "NullVoxPopuli",
-  "workspaces": [
-    "ember-cli-swc-minifier",
-    "tests/*"
-  ],
   "scripts": {
     "test": "npm-run-all --aggregate-output --parallel 'test:*'",
     "lint:fix": "npm-run-all --aggregate-output --parallel 'lint:*:fix'",
@@ -13,11 +9,7 @@
     "lint:esbuild:fix": "yarn workspace ember-cli-swc-minifier lint:fix",
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
-  "volta": {
-    "node": "16.19.1",
-    "yarn": "1.22.19",
-    "npm": "8.19.4"
-  },
+  "packageManager": "pnpm@10.10.0",
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
