@@ -1,17 +1,22 @@
 {
   "name": "ember-cli-swc-minifier",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NullVoxPopuli/ember-cli-swc-minifier.git"
+  },
   "author": "NullVoxPopuli",
   "scripts": {
-    "test": "pnpm test:ember-app",
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
+    "test": "pnpm test:ember-app",
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
-  "engines": {
-    "node": ">= 22"
+  "devDependencies": {
+    "release-plan": "^0.16.0"
   },
   "packageManager": "pnpm@10.10.0",
-  "devDependencies": {
+  "engines": {
+    "node": ">= 22"
   }
 }
