@@ -23,6 +23,7 @@
     "test:ember": "ember test"
   },
   "devDependencies": {
+    "@nullvoxpopuli/eslint-configs": "^5.1.2",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.5",
     "@glimmer/component": "^1.0.4",
