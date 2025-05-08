@@ -1,22 +1,18 @@
 {
   "solution": {
     "ember-cli-swc-minifier": {
-      "impact": "major",
-      "oldVersion": "1.1.4",
-      "newVersion": "2.0.0",
+      "impact": "minor",
+      "oldVersion": "2.0.0",
+      "newVersion": "2.1.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./ember-cli-swc-minifier/package.json"
     }
   },
-  "description": "## Release (2025-05-08)\n\n* ember-cli-swc-minifier 2.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-cli-swc-minifier`\n  * [#50](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/50) Switch to pnpm, drop support for node < 18 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `ember-cli-swc-minifier`\n  * [#53](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/53) npx create-release-plan-setup@latest --update ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#51](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/51) Update lints ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* Other\n  * [#52](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/52) Move to vitest ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-05-08)\n\n* ember-cli-swc-minifier 2.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-cli-swc-minifier`\n  * [#55](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/55) Bump minimum bundled SWC ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
