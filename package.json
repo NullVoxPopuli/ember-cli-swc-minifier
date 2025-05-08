@@ -7,6 +7,9 @@
     "lint:fix": "pnpm --filter '*' lint:fix",
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
+  "engines": {
+    "node": ">= 18"
+  },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
   }
