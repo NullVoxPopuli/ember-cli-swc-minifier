@@ -8,7 +8,7 @@
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 22"
   },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
