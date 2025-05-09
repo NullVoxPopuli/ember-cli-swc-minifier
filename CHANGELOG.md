@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-05-09)
+
+* ember-cli-swc-minifier 2.1.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-cli-swc-minifier`
+  * [#57](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/57) Fix sourceMap output ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-08)
 
 * ember-cli-swc-minifier 2.1.0 (minor)
