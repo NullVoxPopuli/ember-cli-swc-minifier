@@ -17,7 +17,10 @@ function exists(glob) {
 }
 
 async function build(env = {}) {
-  await execa('ember', ['build', '--environment', 'production'], { env });
+  await execa('ember', ['build', '--environment', 'production'], {
+    env,
+    stdio: 'inherit',
+  });
 }
 
 async function hasSourceMappingURL(glob, expectation) {

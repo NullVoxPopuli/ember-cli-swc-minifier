@@ -11,6 +11,9 @@ module.exports = {
     };
 
     if (app.options.sourcemaps && !areSourceMapsEnabled(app.options.sourcemaps)) {
+      /**
+        * NOTE: in SWC, this option is plural
+        */
       defaultOptions.sourceMap = false;
     }
 

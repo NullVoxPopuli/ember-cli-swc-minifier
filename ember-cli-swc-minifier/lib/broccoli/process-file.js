@@ -4,24 +4,58 @@
 
 const fs = require('fs').promises;
 const debug = require('debug')('ember-cli-swc-minifier');
-const defaults = require('lodash.defaultsdeep');
 const swc = require('@swc/core');
 
-/**
- * All options here:
- *
- * https://github.com/swc-project/swc/blob/b869c81888553b870a5a2c79c6ef49354df15670/node-swc/src/types.ts#L17
- */
-const DEFAULT_OPTIONS = {
-  // Not exact implementation, cause these docs are the JS version, but:
-  // Explanations (and defaults) here: https://github.com/terser/terser#compress-options
-  // Rust implementation and defaults here: https://github.com/swc-project/swc/blob/2b2f6955f22c7ef04dd844e7aa686bbcefd977db/crates/swc_ecma_minifier/src/option/mod.rs#L96
-  compress: {
-    sequences: false,
-  },
+const DEFAULT_SWC_OPTIONS = {
   mangle: true,
-  // list of versions: https://github.com/swc-project/swc/blob/2b2f6955f22c7ef04dd844e7aa686bbcefd977db/crates/swc_ecma_minifier/src/option/terser.rs#L456
-  ecma: 2020,
+  ecma: 2022,
+  compress: {
+    "arguments": false,
+    "arrows": true,
+    "booleans": true,
+    "booleans_as_integers": false,
+    "collapse_vars": true,
+    "comparisons": true,
+    "computed_props": true,
+    "conditionals": true,
+    "dead_code": true,
+    "directives": true,
+    "drop_console": false,
+    "drop_debugger": true,
+    "evaluate": true,
+    "expression": false,
+    "hoist_funs": false,
+    "hoist_props": true,
+    "hoist_vars": false,
+    "if_return": true,
+    "join_vars": true,
+    "keep_classnames": false,
+    "keep_fargs": false,
+    "keep_fnames": false,
+    "keep_infinity": false,
+    "loops": true,
+    "negate_iife": true,
+    "properties": true,
+    "reduce_funcs": false,
+    "reduce_vars": false,
+    "side_effects": true,
+    "switches": true,
+    "typeofs": true,
+    "unsafe": false,
+    "unsafe_arrows": false,
+    "unsafe_comps": false,
+    "unsafe_Function": false,
+    "unsafe_math": false,
+    "unsafe_symbols": false,
+    "unsafe_methods": false,
+    "unsafe_proto": false,
+    "unsafe_regexp": false,
+    "unsafe_undefined": false,
+    "unused": true,
+    "const_to_let": true,
+    "pristine_globals": true,
+    "passes": 3
+  },
 };
 
 module.exports = async function processFile(
@@ -33,30 +67,14 @@ module.exports = async function processFile(
   _options
 ) {
   let src = await fs.readFile(inFile, 'utf-8');
-  let swcMinifyOptions = [
-    `compress`,
-    `mangle`,
-    `format`,
-    `ecma`,
-    `keepClassnames`,
-    `keepFnames`,
-    `module`,
-    `safari10`,
-    `toplevel`,
-    `sourceMap`,
-    `outputPath`,
-    `inlineSourcesContent`,
-  ];
-  let options = Object.entries(defaults(_options, DEFAULT_OPTIONS)).reduce(
-    (result, [optionName, value]) => {
-      if (swcMinifyOptions.includes(optionName)) {
-        result[optionName] = value;
-      }
+  let options = Object.assign(DEFAULT_SWC_OPTIONS, _options?.swc || {});
 
-      return result;
-    },
-    {}
-  );
+  if (_options.sourceMap) {
+    options.sourceMap = true;
+  }
+
+  options.compress = Object.assign(DEFAULT_SWC_OPTIONS.compress, _options?.swc?.compress ?? {});
+
   let start = new Date();
 
   debug('[starting]: %s %dKB', relativePath, src.length / 1000);
@@ -67,9 +85,9 @@ module.exports = async function processFile(
      *  - code: string
      *  - map: string
      *
-     * https://github.com/swc-project/swc/blob/b869c81888553b870a5a2c79c6ef49354df15670/node-swc/src/types.ts#L807
+     * https://swc.rs/docs/usage/core#minify
      */
-    let { code: outCode } = await swc.minify(src, options);
+    let { code: outCode, map: outMap } = await swc.minify(src, options);
 
     let end = new Date();
     let total = end - start;
@@ -80,9 +98,10 @@ module.exports = async function processFile(
       );
     }
 
-    await fs.writeFile(outFile, outCode);
-
-    // let outCode = await fs.readFile(outFile, 'utf-8');
+    await Promise.all([
+      fs.writeFile(outFile, outCode),
+      outMap ? fs.writeFile(outFile + '.map', outMap) : null,
+    ]);
 
     debug('[finished]: %s %dKB in %dms', relativePath, outCode.length / 1000, total);
   } catch (e) {
