@@ -100,7 +100,7 @@ module.exports = async function processFile(
 
     await Promise.all([
       fs.writeFile(outFile, outCode),
-      fs.writeFile(outFile + '.map', outMap),
+      outMap ? fs.writeFile(outFile + '.map', outMap) : null,
     ]);
 
     debug('[finished]: %s %dKB in %dms', relativePath, outCode.length / 1000, total);
