@@ -38,6 +38,12 @@ var app = new EmberApp({
     enabled: true,
 
     exclude: ['vendor.js'],
+    swc: { 
+      /* 
+        Optional SWC minify config goes here 
+        https://swc.rs/docs/usage/core#minify
+      */ 
+    }
   },
 });
 ```
