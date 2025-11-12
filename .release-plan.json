@@ -2,8 +2,8 @@
   "solution": {
     "ember-cli-swc-minifier": {
       "impact": "patch",
-      "oldVersion": "2.1.0",
-      "newVersion": "2.1.1",
+      "oldVersion": "2.1.1",
+      "newVersion": "2.1.2",
       "tagName": "latest",
       "constraints": [
         {
@@ -14,5 +14,5 @@
       "pkgJSONPath": "./ember-cli-swc-minifier/package.json"
     }
   },
-  "description": "## Release (2025-05-09)\n\n* ember-cli-swc-minifier 2.1.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-cli-swc-minifier`\n  * [#57](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/57) Fix sourceMap output ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-11-12)\n\n* ember-cli-swc-minifier 2.1.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-cli-swc-minifier`\n  * [#78](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/78) Make ember-cli-swc-minifier run before broccoli-asset-rev ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

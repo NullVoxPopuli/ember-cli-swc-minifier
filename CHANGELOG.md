@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-11-12)
+
+* ember-cli-swc-minifier 2.1.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-cli-swc-minifier`
+  * [#78](https://github.com/NullVoxPopuli/ember-cli-swc-minifier/pull/78) Make ember-cli-swc-minifier run before broccoli-asset-rev ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-09)
 
 * ember-cli-swc-minifier 2.1.1 (patch)
