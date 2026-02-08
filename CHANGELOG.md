@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2025-11-12)
 
 * ember-cli-swc-minifier 2.1.2 (patch)
