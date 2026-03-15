@@ -13,7 +13,7 @@
     "test:ember-app": "cd tests/ember-app && ./run-tests.sh"
   },
   "devDependencies": {
-    "release-plan": "^0.16.0"
+    "release-plan": "^0.17.0"
   },
   "packageManager": "pnpm@10.28.2",
   "engines": {
