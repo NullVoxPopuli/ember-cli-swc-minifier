@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - uses: wyvox/action-setup-pnpm@v3
+      - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm lint
 
   build:
@@ -32,6 +32,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
-    - uses: wyvox/action-setup-pnpm@v3
+    - uses: wyvox/action-setup-pnpm@v4
     - run: pnpm test:ember-app
 
