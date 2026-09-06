@@ -31,8 +31,8 @@
     "workerpool": "^6.4.0"
   },
   "devDependencies": {
-    "@nullvoxpopuli/eslint-configs": "^5.1.2",
-    "eslint": "^9.26.0"
+    "@nullvoxpopuli/eslint-configs": "^7.0.0",
+    "eslint": "^10.0.0"
   },
   "engines": {
     "node": ">= 18"
